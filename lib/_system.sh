@@ -36,7 +36,7 @@ system_set_timezone() {
   sleep 2
 
   sudo su - root <<EOF
-  timedatectl set-timezone America/Sao_Paulo
+  timedatectl set-timezone America/Campo_Grande
 EOF
 
   sleep 2
@@ -111,7 +111,7 @@ criar_banco_dados() {
   sleep 2
 
   sudo su - root <<EOF
-docker run --name postgresql-${nome_instancia} -e POSTGRES_USER=izing -e POSTGRES_PASSWORD=${pg_pass} -e TZ="America/Sao_Paulo" -p ${porta_postgre_intancia}:5432 --restart=always -v /data:/var/lib/postgresql/data -d postgres
+docker run --name postgresql-${nome_instancia} -e POSTGRES_USER=izing -e POSTGRES_PASSWORD=${pg_pass} -e TZ="America/Campo_Grande" -p ${porta_postgre_intancia}:5432 --restart=always -v /data:/var/lib/postgresql/data -d postgres
 
 EOF
 
